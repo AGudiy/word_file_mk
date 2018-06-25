@@ -4,11 +4,10 @@ include_once('config.php');
 $bot = new TelegramBot($ini_array['bot']['token']);
 require 'vendor/autoload.php';
 $word = new  Word();
-
+//199161322
 if(isset($_POST['create_invoice'])){
     $word->createInvoice($_POST);
-    $bot->sendDocument(405529923, 'http://andr-gud.pro/word_generation/tmp/document.docx');
-    //$bot->sendMessage(199161322,'http://andr-gud.pro/word_generation/tmp/document.docx');
+    $bot->sendMessage(405529923,'http://andr-gud.pro/word_generation/tmp/document.docx');
 }elseif(isset($_POST['add_one_product'])){
     $json_client = $_POST['client_data'];
     unset($_POST['client_data']);
@@ -27,4 +26,3 @@ if(isset($_POST['create_invoice'])){
 }else{
     include_once "view/form_user.php";
 }
-
