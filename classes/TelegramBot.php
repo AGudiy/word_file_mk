@@ -70,7 +70,7 @@ class TelegramBot
         }
     }
 
-    public function sendDocument($chat_id = false, $document = 'http://andr-gud.pro/word_generation/tmp/document.docx') //функция не работает
+    public function sendDocument($chat_id = false, $document = 'http://andr-gud.pro/word_generation/tmp/document.pdf') //функция не работает
     {
         if (!$chat_id || !$document) {
             return false;

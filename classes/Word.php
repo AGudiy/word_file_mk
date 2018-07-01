@@ -6,7 +6,7 @@ class Word extends \PhpOffice\PhpWord\PhpWord
     private $count_total = 0;
     private $cost_total = 0;
     private $requisites;
-    private $invoice_number;
+    public $invoice_number;
 
     public function __construct()
     {
@@ -174,12 +174,11 @@ class Word extends \PhpOffice\PhpWord\PhpWord
         $this->section->addText('Выписал',[],['spaceAfter' => 0, 'spaceBefore' => 100]);
         $this->section->addText('Руководитель: Каранкин Исмаил Хусанович',[],['spaceAfter' => 0, 'spaceBefore' => 0]);
         $this->section->addText('М. П.',[],['spaceBefore' => 0]);
-
     }
 
     public function generation()
     {
         $objWriter = \PhpOffice\PhpWord\IOFactory::createWriter($this, 'Word2007');
-        $objWriter->save('tmp/document.docx');
+        $objWriter->save('tmp/'.$this->invoice_number.'.docx');
     }
 }

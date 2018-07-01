@@ -25,4 +25,22 @@ class Helper
 
         return $monthNames[$number];
     }
+
+    public static function getProducts($ar_post)
+    {
+        $ar_products_json = explode(';',$ar_post['products']);
+        foreach ($ar_products_json as $product_json){
+            $products[] = json_decode($product_json, 1);
+        }
+
+        return $products;
+    }
+
+    public static function clear() {
+        $files = glob(PATH.'/tmp/*'); // get all file names
+        foreach($files as $file){ // iterate files
+            if(is_file($file))
+                unlink($file); // delete file
+        }
+    }
 }

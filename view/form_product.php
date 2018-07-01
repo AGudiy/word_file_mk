@@ -54,9 +54,9 @@ include_once PATH . '/view/header.php';
                     <br class="m-3">
                     <button class="btn btn-lg" type="submit" name="add_one_product">Добавить продукт</button>
                     <?php
-                    if(isset($_POST['add_one_product'])):
+                    if(isset($_POST['add_one_product'])||isset($_POST['back_to_products'])):
                     ?>
-                    <input type="submit" name="create_invoice" class="btn btn-primary btn-lg" value="Создать счет">
+                    <input type="submit" name="preview" class="btn btn-primary btn-lg" value="Предварительный просмотр">
                         <?php
                     endif;
                         ?>
